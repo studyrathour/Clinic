@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="py-5 bg-primary text-white text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">About Dr. Manish Verma</h1>
+        <p class="lead">Experienced Pediatrician & Neonatologist</p>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='images/standee.jpg') }}" alt="Dr. Manish Verma Standee" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="mb-3">Our Mission</h2>
+                <p>We are dedicated to providing comprehensive and compassionate care to children of all ages. From newborn care to adolescent health, Dr. Manish Verma ensures that every child receives the best possible medical attention.</p>
+                <h3 class="mt-4 mb-3">Qualifications</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> MBBS</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> DCH (Diploma in Child Health)</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> DNB Pediatrics (Diplomate of National Board)</li>
+                </ul>
+                <h3 class="mt-4 mb-3">Affiliations</h3>
+                <p>Dr. Manish Verma is associated with CHL Hospitals and operates his private clinic (Balaji Clinic) in Indore.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='images/cabin-desk.jpg') }}" alt="Clinic Cabin" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="mb-3">State-of-the-Art Clinic</h2>
+                <p>Our clinic is equipped with modern facilities to ensure a comfortable and effective treatment environment for your child. We maintain high standards of hygiene and patient care.</p>
+                <p>Located in a convenient area of Indore, we strive to make healthcare accessible and stress-free for parents and children alike.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="py-5 bg-dark text-white text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Contact Us</h1>
+        <p class="lead">Get in touch with Dr. Manish Verma</p>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card shadow border-0">
+                    <img src="{{ url_for('static', filename='images/reception-desk.jpg') }}" class="card-img-top" alt="Reception Desk">
+                    <div class="card-body p-4">
+                        <h3 class="mb-3">Clinic Information</h3>
+                        <p class="mb-2"><i class="bi bi-geo-alt-fill text-primary"></i> <strong>Address:</strong><br>Balaji Clinic, 21-22, 1st floor, Milinda Manour, Opp. central Mall, RNT Marg, Indore, Madhya Pradesh 452001</p>
+                        <p class="mb-2"><i class="bi bi-telephone-fill text-primary"></i> <strong>Phone:</strong><br><a href="tel:9827303262" class="text-decoration-none">9827303262</a></p>
+                        <p class="mb-2"><i class="bi bi-hospital-fill text-primary"></i> <strong>Affiliation:</strong><br>CHL Hospitals, Indore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card shadow border-0 p-4">
+                    <h3 class="mb-4">Send us a Message</h3>
+                    <form action="{{ url_for('contact') }}" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Visit Us</h2>
+        <div class="ratio ratio-21x9 shadow rounded overflow-hidden">
+            <iframe src="https://maps.google.com/maps?q=Balaji%20Clinic%20Indore%20Madhya%20Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+{% endblock %}

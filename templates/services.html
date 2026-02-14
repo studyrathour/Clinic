@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="py-5 bg-success text-white text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Our Services</h1>
+        <p class="lead">Comprehensive Pediatric Care</p>
+    </div>
+</header>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/Newborn-Illness.jpg') }}" class="card-img-top" alt="Newborn Illness">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Newborn Illness</h5>
+                        <p class="card-text text-muted text-center">Care for premature babies, septicemia, recurrent vomiting, regurgitation in infants, poor weight gain.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/Childhood-and-Newborn-Diseases.jpg') }}" class="card-img-top" alt="Childhood and Newborn Diseases">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Childhood Diseases</h5>
+                        <p class="card-text text-muted text-center">Treatment for fever, typhoid fever, flu, jaundice (hepatitis), and other infections.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/Nutritional-Deficiencies.jpg') }}" class="card-img-top" alt="Nutritional Deficiencies">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Nutritional Deficiencies</h5>
+                        <p class="card-text text-muted text-center">Addressing anemia, rickets, vitamin & mineral deficiencies, obesity, and binge eating issues.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/Respiratory-Illness.jpg') }}" class="card-img-top" alt="Respiratory Illness">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Respiratory Illness</h5>
+                        <p class="card-text text-muted text-center">Management of asthma, pneumonia, and other respiratory conditions in children.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/Digestive-Issues.jpg') }}" class="card-img-top" alt="Digestive Issues">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Digestive Issues</h5>
+                        <p class="card-text text-muted text-center">Treatment for diarrhoea, vomiting, poor appetite, and abdominal pain.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ url_for('static', filename='images/Recurrent-Illness.jpg') }}" class="card-img-top" alt="Recurrent Illness">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Recurrent Illness</h5>
+                        <p class="card-text text-muted text-center">Handling recurrent fever, cold & cough, skin diseases, allergies, and stomach aches.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
