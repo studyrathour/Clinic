@@ -1,0 +1,34 @@
+import unittest
+from app import app, db, ContactMessage, Appointment
+
+class AppTestCase(unittest.TestCase):
+    def setUp(self):
+        app.config['TESTING'] = True
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        self.app = app.test_client()
+        with app.app_context():
+            db.create_all()
+
+    def tearDown(self):
+        with app.app_context():
+            db.session.remove()
+            db.drop_all()
+
+    def test_index_page(self):
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_contact_page(self):
+        response = self.app.get('/contact')
+        self.assertEqual(response.status_code, 200)
+
+    def test_services_page(self):
+        response = self.app.get('/services')
+        self.assertEqual(response.status_code, 200)
+
+    def test_about_page(self):
+        response = self.app.get('/about')
+        self.assertEqual(response.status_code, 200)
+
+if __name__ == '__main__':
+    unittest.main()
