@@ -1,78 +1,155 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}Products & Services | Rajdhani Mattress Mart{% endblock %}
 
 {% block content %}
-<header class="py-5 bg-success text-white text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold">Our Services</h1>
-        <p class="lead">Comprehensive Pediatric Care</p>
+<!-- Page Header -->
+<div class="bg-brand-blue py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Products & Services</h1>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto">Explore our extensive range of high-quality mattresses, custom curtains, and dedicated services.</p>
     </div>
-</header>
+</div>
 
-<section class="py-5">
-    <div class="container">
-        <div class="row g-4">
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename='images/Newborn-Illness.jpg') }}" class="card-img-top" alt="Newborn Illness">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Newborn Illness</h5>
-                        <p class="card-text text-muted text-center">Care for premature babies, septicemia, recurrent vomiting, regurgitation in infants, poor weight gain.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename='images/Childhood-and-Newborn-Diseases.jpg') }}" class="card-img-top" alt="Childhood and Newborn Diseases">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Childhood Diseases</h5>
-                        <p class="card-text text-muted text-center">Treatment for fever, typhoid fever, flu, jaundice (hepatitis), and other infections.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename='images/Nutritional-Deficiencies.jpg') }}" class="card-img-top" alt="Nutritional Deficiencies">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Nutritional Deficiencies</h5>
-                        <p class="card-text text-muted text-center">Addressing anemia, rickets, vitamin & mineral deficiencies, obesity, and binge eating issues.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename='images/Respiratory-Illness.jpg') }}" class="card-img-top" alt="Respiratory Illness">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Respiratory Illness</h5>
-                        <p class="card-text text-muted text-center">Management of asthma, pneumonia, and other respiratory conditions in children.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename='images/Digestive-Issues.jpg') }}" class="card-img-top" alt="Digestive Issues">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Digestive Issues</h5>
-                        <p class="card-text text-muted text-center">Treatment for diarrhoea, vomiting, poor appetite, and abdominal pain.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ url_for('static', filename='images/Recurrent-Illness.jpg') }}" class="card-img-top" alt="Recurrent Illness">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Recurrent Illness</h5>
-                        <p class="card-text text-muted text-center">Handling recurrent fever, cold & cough, skin diseases, allergies, and stomach aches.</p>
-                    </div>
-                </div>
-            </div>
-
+<!-- Products Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-brand-dark mb-4">Our Products</h2>
+            <div class="w-16 h-1 bg-brand-gold mx-auto mb-6"></div>
+            <p class="text-slate-600 text-lg">We offer a wide variety of mattresses and curtains to suit every need, budget, and preference.</p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-brand-light rounded-xl overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="h-48 bg-slate-200 relative flex items-center justify-center overflow-hidden">
+                    <i class="fas fa-bed text-6xl text-slate-400 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Spring Mattresses</h3>
+                    <p class="text-slate-600">Traditional and reliable. Our spring mattresses provide excellent support and durability, ideal for those who prefer a firmer, bouncy feel.</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-brand-light rounded-xl overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="h-48 bg-slate-200 relative flex items-center justify-center overflow-hidden">
+                    <i class="fas fa-cloud text-6xl text-slate-400 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Foam Mattresses</h3>
+                    <p class="text-slate-600">Experience cloud-like comfort. Our foam mattresses contour to your body shape, relieving pressure points for a deeply restful sleep.</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-brand-light rounded-xl overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="h-48 bg-slate-200 relative flex items-center justify-center overflow-hidden">
+                    <i class="fas fa-leaf text-6xl text-slate-400 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Coir Mattresses</h3>
+                    <p class="text-slate-600">Eco-friendly and naturally firm. Made from coconut fiber, coir mattresses offer excellent ventilation and robust back support.</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-brand-light rounded-xl overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="h-48 bg-slate-200 relative flex items-center justify-center overflow-hidden">
+                    <i class="fas fa-bone text-6xl text-slate-400 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Orthopedic Mattresses</h3>
+                    <p class="text-slate-600">Designed with spinal alignment in mind. Perfect for individuals seeking targeted support to alleviate back or joint pain.</p>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="bg-brand-light rounded-xl overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="h-48 bg-slate-200 relative flex items-center justify-center overflow-hidden">
+                    <i class="fas fa-ruler-combined text-6xl text-slate-400 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Custom Size Mattresses</h3>
+                    <p class="text-slate-600">Have an irregularly shaped bed frame? We can custom manufacture a mattress to precisely fit your exact dimensions.</p>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="bg-brand-light rounded-xl overflow-hidden shadow hover:shadow-xl transition group">
+                <div class="h-48 bg-slate-200 relative flex items-center justify-center overflow-hidden">
+                    <i class="fas fa-person-booth text-6xl text-slate-400 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Curtains</h3>
+                    <p class="text-slate-600">Elevate your home decor. Choose from a vast selection of fabrics, patterns, and styles to perfectly complement your interior design.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-16 bg-brand-light border-t border-slate-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-brand-dark mb-4">Our Services</h2>
+            <div class="w-16 h-1 bg-brand-gold mx-auto mb-6"></div>
+            <p class="text-slate-600 text-lg">Beyond just selling products, we offer comprehensive services to ensure a seamless and satisfying experience from start to finish.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow border-l-4 border-brand-blue flex items-start">
+                <div class="bg-blue-50 text-brand-blue p-4 rounded-lg mr-6">
+                    <i class="fas fa-store text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Mattress & Curtain Sales</h3>
+                    <p class="text-slate-600">Expert guidance to help you navigate our extensive inventory and select the perfect products for your specific requirements and budget.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow border-l-4 border-brand-gold flex items-start">
+                <div class="bg-yellow-50 text-brand-gold p-4 rounded-lg mr-6">
+                    <i class="fas fa-hammer text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Custom Mattress Manufacturing</h3>
+                    <p class="text-slate-600">In-house manufacturing capabilities allow us to create bespoke mattresses tailored to uncommon sizes or specific comfort profiles.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow border-l-4 border-brand-blue flex items-start">
+                <div class="bg-blue-50 text-brand-blue p-4 rounded-lg mr-6">
+                    <i class="fas fa-truck text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Home Delivery</h3>
+                    <p class="text-slate-600">Convenient and reliable home delivery services to ensure your new mattress or curtains arrive safely and directly to your doorstep.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow border-l-4 border-brand-gold flex items-start">
+                <div class="bg-yellow-50 text-brand-gold p-4 rounded-lg mr-6">
+                    <i class="fas fa-tools text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Installation Services</h3>
+                    <p class="text-slate-600">Professional installation services for curtains and complex bed setups, ensuring everything is perfectly positioned and ready for use.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl font-bold text-brand-dark mb-6">Need help choosing the right mattress?</h2>
+        <a href="{{ url_for('contact') }}" class="inline-block bg-brand-blue text-white px-8 py-4 rounded-md font-bold hover:bg-blue-800 transition shadow-lg text-lg">
+            Consult With Our Experts
+        </a>
     </div>
 </section>
 {% endblock %}

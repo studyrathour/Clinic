@@ -1,93 +1,148 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}Home | Rajdhani Mattress Mart{% endblock %}
 
 {% block content %}
-<header class="hero-section text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ url_for('static', filename='images/reception-waiting.jpg') }}') no-repeat center center/cover;">
-    <div class="container">
-        <h1 class="display-3 fw-bold mb-3">Compassionate Care for Your Little Ones</h1>
-        <p class="lead mb-4">Dr. Manish Verma - Pediatrician & Neonatologist</p>
-        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Contact Us</a>
+<!-- Hero Section -->
+<section class="relative bg-brand-dark overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="{{ url_for('static', filename='images/IMG_20260313_110328.jpg') }}" alt="Rajdhani Mattress Mart Storefront" class="w-full h-full object-cover opacity-40 mix-blend-multiply">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent"></div>
     </div>
-</header>
 
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 mb-4 mb-md-0">
-                <img src="{{ url_for('static', filename='images/dr-manish-verma.jpg') }}" alt="Dr. Manish Verma" class="img-fluid rounded shadow">
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-48 flex flex-col items-center justify-center text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 animate-fade-in-up">
+            Surat's Most Trusted <br class="hidden sm:block">
+            <span class="text-brand-gold">Mattress & Curtain Store</span>
+        </h1>
+        <p class="mt-4 max-w-2xl text-xl sm:text-2xl text-slate-300 mx-auto mb-10 animate-fade-in-up delay-100">
+            Established in 1970. Delivering comfort and quality for over 54 years.
+        </p>
+
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up delay-200">
+            <a href="{{ url_for('services') }}" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-md text-brand-dark bg-brand-gold hover:bg-yellow-400 transition shadow-lg hover:shadow-xl">
+                Explore Products
+            </a>
+            <a href="tel:+919099881997" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-bold rounded-md text-white hover:bg-white hover:text-brand-dark transition">
+                <i class="fas fa-phone-alt mr-2"></i> Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats/Features Bar -->
+<section class="bg-brand-blue text-white py-8 shadow-inner">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-blue-700">
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1">54+</div>
+                <div class="text-sm font-medium uppercase tracking-wide">Years in Business</div>
             </div>
-            <div class="col-md-6">
-                <h2 class="mb-3">Welcome to Our Clinic</h2>
-                <p class="lead">Dedicated to providing the best medical care for children from newborns to adolescents.</p>
-                <p>Dr. Manish Verma (MBBS, DCH, DNB Pediatrics) is a renowned Pediatrician and Neonatologist in Indore. With years of experience and a compassionate approach, he ensures the well-being of your child.</p>
-                <p>We specialize in Newborn Illness, Childhood Diseases, Nutritional Deficiencies, Respiratory Illness, and more.</p>
-                <a href="{{ url_for('about') }}" class="btn btn-outline-primary">Learn More</a>
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1">1970</div>
+                <div class="text-sm font-medium uppercase tracking-wide">Established</div>
+            </div>
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1 flex justify-center items-center">
+                    3.9 <i class="fas fa-star text-sm ml-1 text-yellow-300"></i>
+                </div>
+                <div class="text-sm font-medium uppercase tracking-wide">Customer Rating</div>
+            </div>
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1">7 Days</div>
+                <div class="text-sm font-medium uppercase tracking-wide">Open Every Week</div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">Our Clinic</h2>
-        <div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner rounded shadow">
-                <div class="carousel-item active">
-                    <img src="{{ url_for('static', filename='images/waiting-area.jpg') }}" class="d-block w-100" alt="Waiting Area" style="height: 500px; object-fit: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/cabin-desk.jpg') }}" class="d-block w-100" alt="Doctor Cabin" style="height: 500px; object-fit: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/examination-room.jpg') }}" class="d-block w-100" alt="Examination Room" style="height: 500px; object-fit: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/reception-desk.jpg') }}" class="d-block w-100" alt="Reception" style="height: 500px; object-fit: cover;">
-                </div>
+<!-- Introduction Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-6">Welcome to Rajdhani Mattress Mart</h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                Rajdhani Mattress Mart is one of Surat's oldest and most trusted mattress stores. Located in Palanpur Jakat Naka, our shop has been serving customers with high-quality mattresses and curtains since 1970.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Whether you need a specialized orthopedic mattress, a custom size for a unique bed frame, or beautiful new curtains to refresh your home, our expert staff is here to help you find the perfect solution. We are known for our exceptional service, quality products, and reasonable prices.
+            </p>
+            <div class="mt-10">
+                <a href="{{ url_for('about') }}" class="text-brand-blue font-bold hover:text-blue-800 transition inline-flex items-center">
+                    Read Our Full Story <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
 </section>
 
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Our Services</h2>
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Newborn Care</h5>
-                        <p class="card-text">Specialized care for premature babies and newborn illnesses.</p>
-                    </div>
+<!-- Quick Products Preview -->
+<section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-brand-dark mb-12">Our Core Products</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <i class="fas fa-bed text-5xl text-brand-blue opacity-50"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Premium Mattresses</h3>
+                    <p class="text-slate-600 mb-4">A wide variety including Spring, Foam, Coir, and Orthopedic mattresses designed for your ultimate comfort.</p>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Childhood Diseases</h5>
-                        <p class="card-text">Treatment for fever, typhoid, flu, and other common childhood ailments.</p>
-                    </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <i class="fas fa-ruler-combined text-5xl text-brand-blue opacity-50"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Custom Manufacturing</h3>
+                    <p class="text-slate-600 mb-4">We specialize in custom size mattresses tailored specifically to fit your unique bed dimensions perfectly.</p>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">Nutritional Guidance</h5>
-                        <p class="card-text">Addressing nutritional deficiencies, obesity, and picky eating habits.</p>
-                    </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <i class="fas fa-person-booth text-5xl text-brand-blue opacity-50"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Curtains & Home Decor</h3>
+                    <p class="text-slate-600 mb-4">Beautiful, high-quality curtains to enhance your home's aesthetic, complete with professional installation services.</p>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
-            <a href="{{ url_for('services') }}" class="btn btn-primary">View All Services</a>
+
+        <div class="text-center mt-12">
+            <a href="{{ url_for('services') }}" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-800 transition shadow-md">
+                View All Products & Services
+            </a>
         </div>
     </div>
 </section>
+
+<!-- Call to Action Banner -->
+<section class="bg-brand-gold py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <h2 class="text-3xl font-extrabold text-brand-dark mb-2">Ready to sleep better?</h2>
+                <p class="text-lg text-brand-dark opacity-90 font-medium">Visit our shop today or call us for a consultation.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="{{ url_for('contact') }}" class="bg-brand-dark text-white px-6 py-3 rounded-md font-bold hover:bg-slate-800 transition shadow-lg">
+                    Get Directions
+                </a>
+                <a href="tel:+919099881997" class="bg-white text-brand-dark px-6 py-3 rounded-md font-bold hover:bg-gray-100 transition shadow-lg flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
