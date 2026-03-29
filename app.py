@@ -48,6 +48,11 @@ def about():
 def services():
     return render_template('services.html')
 
+
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':

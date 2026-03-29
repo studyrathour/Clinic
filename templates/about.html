@@ -1,45 +1,104 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}About Us | Rajdhani Mattress Mart{% endblock %}
 
 {% block content %}
-<header class="py-5 bg-primary text-white text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold">About Dr. Manish Verma</h1>
-        <p class="lead">Experienced Pediatrician & Neonatologist</p>
+<!-- Page Header -->
+<div class="bg-brand-blue py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">About Us</h1>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto">Discover the rich history and commitment to quality behind Surat's most trusted mattress store.</p>
     </div>
-</header>
+</div>
 
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='images/standee.jpg') }}" alt="Dr. Manish Verma Standee" class="img-fluid rounded shadow">
+<!-- Main Content Area -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+            <!-- Image / Storefront -->
+            <div class="w-full lg:w-1/2 relative">
+                <div class="rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                    <img src="{{ url_for('static', filename='images/IMG_20260313_110328.jpg') }}" alt="Rajdhani Mattress Mart Storefront Image" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+                </div>
+                <!-- Decorative Element -->
+                <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-brand-gold rounded-2xl z-0 hidden md:block"></div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-50 rounded-full z-0 opacity-50 hidden md:block"></div>
             </div>
-            <div class="col-lg-6">
-                <h2 class="mb-3">Our Mission</h2>
-                <p>We are dedicated to providing comprehensive and compassionate care to children of all ages. From newborn care to adolescent health, Dr. Manish Verma ensures that every child receives the best possible medical attention.</p>
-                <h3 class="mt-4 mb-3">Qualifications</h3>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> MBBS</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> DCH (Diploma in Child Health)</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary"></i> DNB Pediatrics (Diplomate of National Board)</li>
-                </ul>
-                <h3 class="mt-4 mb-3">Affiliations</h3>
-                <p>Dr. Manish Verma is associated with CHL Hospitals and operates his private clinic (Balaji Clinic) in Indore.</p>
+
+            <!-- Text Content -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-brand-blue font-bold tracking-wider uppercase text-sm mb-2">Our History</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-6">Established in <span class="text-brand-gold">1970</span></h3>
+
+                <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
+                    <p>
+                        Rajdhani Mattress Mart is proud to be one of Surat's oldest and most deeply trusted mattress and curtain dealers. Located in the bustling area of Palanpur Jakat Naka, our journey began over five decades ago.
+                    </p>
+                    <p>
+                        Since 1970, we have been unwavering in our mission to provide the local community with exceptional comfort and quality sleep solutions. With <strong class="text-brand-blue">over 54 years of dedicated service</strong>, we have built a reputation based on trust, quality craftsmanship, and a deep understanding of our customers' needs.
+                    </p>
+                    <p>
+                        What started as a small, humble store has grown into a cornerstone business in the region. We've watched generations of families return to us, relying on our expertise to furnish their homes with the best mattresses and beautiful curtains.
+                    </p>
+                    <p>
+                        Our long-standing presence in the market is a testament to our core values: offering genuine products, providing expert advice, and ensuring that every customer leaves satisfied with their purchase.
+                    </p>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-slate-200">
+                    <h4 class="text-xl font-bold text-brand-dark mb-4">Why Choose Us?</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3"></i> 54+ Years of Trust
+                        </li>
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3"></i> Expert Craftsmanship
+                        </li>
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3"></i> High-Quality Materials
+                        </li>
+                        <li class="flex items-center text-slate-700">
+                            <i class="fas fa-check-circle text-brand-gold mr-3"></i> Personalized Service
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row align-items-center flex-row-reverse">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='images/cabin-desk.jpg') }}" alt="Clinic Cabin" class="img-fluid rounded shadow">
+<!-- Values Section -->
+<section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-extrabold text-brand-dark mb-4">Our Commitment</h2>
+            <div class="w-16 h-1 bg-brand-blue mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6 mx-auto">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3 class="text-xl font-bold text-center text-brand-dark mb-4">Quality Assurance</h3>
+                <p class="text-slate-600 text-center">We source only the finest materials for our mattresses and curtains, ensuring durability, comfort, and a premium finish that lasts for years.</p>
             </div>
-            <div class="col-lg-6">
-                <h2 class="mb-3">State-of-the-Art Clinic</h2>
-                <p>Our clinic is equipped with modern facilities to ensure a comfortable and effective treatment environment for your child. We maintain high standards of hygiene and patient care.</p>
-                <p>Located in a convenient area of Indore, we strive to make healthcare accessible and stress-free for parents and children alike.</p>
+
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-yellow-50 text-brand-gold rounded-full flex items-center justify-center text-2xl mb-6 mx-auto">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-xl font-bold text-center text-brand-dark mb-4">Customer Satisfaction</h3>
+                <p class="text-slate-600 text-center">Our 3.9/5 rating reflects our dedication to making sure every customer is happy. We listen to your needs and provide tailored solutions.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6 mx-auto">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3 class="text-xl font-bold text-center text-brand-dark mb-4">Reasonable Pricing</h3>
+                <p class="text-slate-600 text-center">We believe that a good night's sleep shouldn't break the bank. We offer highly competitive and reasonable prices across all our product ranges.</p>
             </div>
         </div>
     </div>

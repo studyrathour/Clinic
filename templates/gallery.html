@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery | Rajdhani Mattress Mart{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="bg-brand-blue py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Our Gallery</h1>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto">Take a look at our shop, our products, and the quality we've delivered since 1970.</p>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Filter Buttons (Optional functionality for later) -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="px-6 py-2 rounded-full bg-brand-blue text-white font-medium hover:bg-blue-800 transition">All Photos (263)</button>
+            <button class="px-6 py-2 rounded-full bg-white text-slate-600 border border-slate-300 font-medium hover:bg-slate-50 transition">Shop</button>
+            <button class="px-6 py-2 rounded-full bg-white text-slate-600 border border-slate-300 font-medium hover:bg-slate-50 transition">Products</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Main Shop Image 1 (Provided) -->
+            <div class="group relative rounded-xl overflow-hidden shadow-md bg-white aspect-square cursor-pointer hover:shadow-xl transition-all duration-300">
+                <img src="{{ url_for('static', filename='images/IMG_20260313_110328.jpg') }}" alt="Rajdhani Mattress Mart Storefront" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition duration-300 transform scale-50 group-hover:scale-100"></i>
+                </div>
+            </div>
+
+            <!-- Main Shop Image 2 (Provided) -->
+            <div class="group relative rounded-xl overflow-hidden shadow-md bg-white aspect-square cursor-pointer hover:shadow-xl transition-all duration-300">
+                <img src="{{ url_for('static', filename='images/IMG_20260313_110328.jpg') }}" alt="Rajdhani Mattress Mart Exterior" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition duration-300 transform scale-50 group-hover:scale-100"></i>
+                </div>
+            </div>
+
+            <!-- Placeholder slots for user to upload more images -->
+            {% for i in range(1, 8) %}
+            <div class="group relative rounded-xl overflow-hidden shadow border-2 border-dashed border-slate-300 bg-slate-50 aspect-square flex flex-col items-center justify-center hover:bg-slate-100 transition duration-300">
+                <i class="fas fa-image text-slate-400 text-5xl mb-4 group-hover:text-brand-blue transition"></i>
+                <p class="text-slate-500 font-medium text-center px-4">Image Placeholder<br><span class="text-sm font-normal text-slate-400">Add your product image here</span></p>
+                <div class="mt-4 px-4 py-2 bg-white border border-slate-200 rounded-md shadow-sm text-sm text-brand-blue font-medium flex items-center group-hover:border-brand-blue transition">
+                    <i class="fas fa-plus mr-2"></i> Upload Image
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-slate-600 mb-6">Want to see all 263 photos?</p>
+            <a href="https://www.justdial.com/Surat/Rajdhani-Mattress-Mart-Near-Dipanjali-Society-Palanpur-Jakat-Naka/0261PX261-X261-160121142030-W5L2_BZDET" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-brand-dark text-white px-8 py-3 rounded-md font-medium hover:bg-slate-800 transition">
+                View Gallery on JustDial <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

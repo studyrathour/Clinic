@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Rajdhani Mattress Mart</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            gold: '#fbbf24',
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="bg-brand-light text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-brand-blue tracking-tight">
+                        Rajdhani <span class="text-brand-gold">Mattress Mart</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-brand-blue font-medium transition duration-150 ease-in-out">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-brand-blue font-medium transition duration-150 ease-in-out">About Us</a>
+                    <a href="services.html" class="text-slate-600 hover:text-brand-blue font-medium transition duration-150 ease-in-out">Products & Services</a>
+                    <a href="gallery.html" class="text-slate-600 hover:text-brand-blue font-medium transition duration-150 ease-in-out">Gallery</a>
+                    <a href="contact.html" class="text-slate-600 hover:text-brand-blue font-medium transition duration-150 ease-in-out">Contact</a>
+                </nav>
+
+                <!-- Call to action button -->
+                <div class="hidden md:flex items-center">
+                    <a href="tel:+919099881997" class="bg-brand-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md font-semibold transition duration-150 ease-in-out flex items-center">
+                        <i class="fas fa-phone-alt mr-2"></i> +91 90998 81997
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-blue focus:outline-none focus:text-brand-blue">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-slate-50">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-slate-50">About Us</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-slate-50">Products & Services</a>
+                <a href="gallery.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-slate-50">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-blue hover:bg-slate-50">Contact</a>
+                <a href="tel:+919099881997" class="block px-3 py-2 rounded-md text-base font-bold text-brand-blue hover:bg-slate-50">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Us Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+<!-- Hero Section -->
+<section class="relative bg-brand-dark overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="static/images/IMG_20260313_110328.jpg" alt="Rajdhani Mattress Mart Storefront" class="w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent"></div>
+    </div>
+
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-48 flex flex-col items-center justify-center text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 animate-fade-in-up">
+            Surat's Most Trusted <br class="hidden sm:block">
+            <span class="text-brand-gold">Mattress & Curtain Store</span>
+        </h1>
+        <p class="mt-4 max-w-2xl text-xl sm:text-2xl text-slate-300 mx-auto mb-10 animate-fade-in-up delay-100">
+            Established in 1970. Delivering comfort and quality for over 54 years.
+        </p>
+
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up delay-200">
+            <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-md text-brand-dark bg-brand-gold hover:bg-yellow-400 transition shadow-lg hover:shadow-xl">
+                Explore Products
+            </a>
+            <a href="tel:+919099881997" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-bold rounded-md text-white hover:bg-white hover:text-brand-dark transition">
+                <i class="fas fa-phone-alt mr-2"></i> Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats/Features Bar -->
+<section class="bg-brand-blue text-white py-8 shadow-inner">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-blue-700">
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1">54+</div>
+                <div class="text-sm font-medium uppercase tracking-wide">Years in Business</div>
+            </div>
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1">1970</div>
+                <div class="text-sm font-medium uppercase tracking-wide">Established</div>
+            </div>
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1 flex justify-center items-center">
+                    3.9 <i class="fas fa-star text-sm ml-1 text-yellow-300"></i>
+                </div>
+                <div class="text-sm font-medium uppercase tracking-wide">Customer Rating</div>
+            </div>
+            <div class="p-4">
+                <div class="text-3xl font-extrabold text-brand-gold mb-1">7 Days</div>
+                <div class="text-sm font-medium uppercase tracking-wide">Open Every Week</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-6">Welcome to Rajdhani Mattress Mart</h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                Rajdhani Mattress Mart is one of Surat's oldest and most trusted mattress stores. Located in Palanpur Jakat Naka, our shop has been serving customers with high-quality mattresses and curtains since 1970.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Whether you need a specialized orthopedic mattress, a custom size for a unique bed frame, or beautiful new curtains to refresh your home, our expert staff is here to help you find the perfect solution. We are known for our exceptional service, quality products, and reasonable prices.
+            </p>
+            <div class="mt-10">
+                <a href="about.html" class="text-brand-blue font-bold hover:text-blue-800 transition inline-flex items-center">
+                    Read Our Full Story <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Products Preview -->
+<section class="py-16 bg-brand-light">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-brand-dark mb-12">Our Core Products</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <i class="fas fa-bed text-5xl text-brand-blue opacity-50"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Premium Mattresses</h3>
+                    <p class="text-slate-600 mb-4">A wide variety including Spring, Foam, Coir, and Orthopedic mattresses designed for your ultimate comfort.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <i class="fas fa-ruler-combined text-5xl text-brand-blue opacity-50"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Custom Manufacturing</h3>
+                    <p class="text-slate-600 mb-4">We specialize in custom size mattresses tailored specifically to fit your unique bed dimensions perfectly.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    <i class="fas fa-person-booth text-5xl text-brand-blue opacity-50"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Curtains & Home Decor</h3>
+                    <p class="text-slate-600 mb-4">Beautiful, high-quality curtains to enhance your home's aesthetic, complete with professional installation services.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="services.html" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-800 transition shadow-md">
+                View All Products & Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="bg-brand-gold py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <h2 class="text-3xl font-extrabold text-brand-dark mb-2">Ready to sleep better?</h2>
+                <p class="text-lg text-brand-dark opacity-90 font-medium">Visit our shop today or call us for a consultation.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="contact.html" class="bg-brand-dark text-white px-6 py-3 rounded-md font-bold hover:bg-slate-800 transition shadow-lg">
+                    Get Directions
+                </a>
+                <a href="tel:+919099881997" class="bg-white text-brand-dark px-6 py-3 rounded-md font-bold hover:bg-gray-100 transition shadow-lg flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-slate-300 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Rajdhani <span class="text-brand-gold">Mattress Mart</span></h3>
+                    <p class="mb-4 text-sm leading-relaxed">
+                        Surat's oldest and most trusted mattress store, established in 1970. Serving customers for over 54 years with quality mattresses and curtains.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <span class="text-brand-gold">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span class="ml-1 text-white">3.9/5 Rating</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Quick Links & Hours -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Information</h3>
+                    <ul class="space-y-2 text-sm mb-6">
+                        <li><a href="about.html" class="hover:text-brand-gold transition duration-150">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-brand-gold transition duration-150">Products & Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-brand-gold transition duration-150">Gallery</a></li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold text-white mb-2">Business Hours</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li class="flex justify-between"><span>Mon - Sun:</span> <span>8:00 AM - 8:00 PM</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-gold"></i>
+                            <span>Shop No. 14, Dindayal Society,<br>Near Dipanjali Society, Palanpur Road,<br>Palanpur Jakat Naka, Surat-395009,<br>Gujarat, India</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-gold"></i>
+                            <a href="tel:+919099881997" class="hover:text-white">+91 90998 81997</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-gold"></i>
+                            <a href="mailto:rajdhanimattressmart@gmail.com" class="hover:text-white">rajdhanimattressmart@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2024 Rajdhani Mattress Mart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
