@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anukul Library & Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/IMG-20260320-WA0000.jpg" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 50;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            transition: transform 0.3s;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+        .call {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <img class="h-16 w-16 rounded-full object-cover border-2 border-white" src="assets/IMG-20260320-WA0000.jpg" alt="Logo">
+                    <div class="ml-3">
+                        <span class="font-bold text-2xl tracking-wide">ANUKUL</span>
+                        <span class="block text-sm text-green-200">Library & Academy</span>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="index.html" class="bg-green-800 px-3 py-2 rounded-md text-sm font-medium border border-green-600">Home</a>
+                        <a href="facilities.html" class="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Facilities</a>
+                        <a href="academy.html" class="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Academy</a>
+                        <a href="gallery.html" class="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Gallery</a>
+                        <a href="contact.html" class="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact Us</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-green-200 hover:text-white hover:bg-green-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-green-800">
+                <a href="index.html" class="bg-green-900 block px-3 py-2 rounded-md text-base font-medium text-white">Home</a>
+                <a href="facilities.html" class="hover:bg-green-700 block px-3 py-2 rounded-md text-base font-medium text-white">Facilities</a>
+                <a href="academy.html" class="hover:bg-green-700 block px-3 py-2 rounded-md text-base font-medium text-white">Academy</a>
+                <a href="gallery.html" class="hover:bg-green-700 block px-3 py-2 rounded-md text-base font-medium text-white">Gallery</a>
+                <a href="contact.html" class="hover:bg-green-700 block px-3 py-2 rounded-md text-base font-medium text-white">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Notification Popup -->
+    <div id="notification-popup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75 hidden">
+        <div class="relative bg-white p-2 rounded-lg max-w-[90vw] md:max-w-[70vw] lg:max-w-4xl shadow-2xl transform scale-95 transition-transform duration-300">
+            <button onclick="document.getElementById('notification-popup').style.display='none'" class="absolute -top-4 -right-4 bg-red-600 text-white hover:bg-red-700 rounded-full w-10 h-10 flex items-center justify-center font-bold text-xl shadow-lg border-2 border-white z-10 transition">
+                &times;
+            </button>
+            <img src="assets/IMG-20260320-WA0001.jpg" alt="Anukul Academy Notification" class="w-full h-auto rounded-md">
+        </div>
+    </div>
+
+    <script>
+        // Show popup when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('notification-popup');
+            if (popup) {
+                // Remove hidden class and set display
+                popup.classList.remove('hidden');
+                popup.style.display = 'flex';
+                // Trigger animation
+                setTimeout(() => {
+                    popup.firstElementChild.classList.remove('scale-95');
+                    popup.firstElementChild.classList.add('scale-100');
+                }, 50);
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gray-900 overflow-hidden h-[90vh] min-h-[600px] flex items-center justify-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" src="assets/IMG-20260320-WA0004.jpg" alt="Library Study Desks">
+            <div class="absolute inset-0 bg-green-900 bg-opacity-70 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10">
+            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl drop-shadow-lg">
+                <span class="block mb-2">Welcome to</span>
+                <span class="block text-green-300 drop-shadow-md">Anukul Library & Academy</span>
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-200 drop-shadow sm:text-2xl">
+                "स्वअध्ययन ही सफलता का मूल मंत्र है |"
+            </p>
+            <p class="mt-2 max-w-2xl mx-auto text-lg text-gray-300 drop-shadow">
+                24x7 Open Library providing the best environment for students in Dildarnagar.
+            </p>
+
+            <div class="mt-10 sm:flex sm:justify-center gap-4">
+                <div class="rounded-md shadow">
+                    <a href="gallery.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-green-900 bg-green-300 hover:bg-white hover:text-green-800 md:py-4 md:text-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                        Explore Library
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="mt-3 sm:mt-0 rounded-md shadow">
+                    <a href="facilities.html" class="w-full flex items-center justify-center px-8 py-3 border-2 border-white text-base font-bold rounded-full text-white bg-transparent hover:bg-white hover:text-green-900 md:py-4 md:text-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                        Our Facilities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Highlights Section -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-10">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Why Choose Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    A Perfect Place for Study
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                    <div class="relative p-6 bg-white rounded-xl shadow-md border-l-4 border-green-500 hover:shadow-lg transition">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <p class="ml-16 text-xl leading-6 font-bold text-gray-900">24/7 Access</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">
+                            Library Open Day & Night. Study anytime that suits your schedule.
+                        </dd>
+                    </div>
+
+                    <div class="relative p-6 bg-white rounded-xl shadow-md border-l-4 border-green-500 hover:shadow-lg transition">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                                <i class="fas fa-wifi text-xl"></i>
+                            </div>
+                            <p class="ml-16 text-xl leading-6 font-bold text-gray-900">High-Speed Wi-Fi</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">
+                            Free, unlimited high-speed internet for all your online classes and research.
+                        </dd>
+                    </div>
+
+                    <div class="relative p-6 bg-white rounded-xl shadow-md border-l-4 border-green-500 hover:shadow-lg transition">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                                <i class="fas fa-snowflake text-xl"></i>
+                            </div>
+                            <p class="ml-16 text-xl leading-6 font-bold text-gray-900">A.C. Environment</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">
+                            Clean, peaceful, and fully air-conditioned study spaces for ultimate focus.
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="mt-16 text-center">
+                <img src="assets/IMG-20260320-WA0002.jpg" alt="Library Interior" class="rounded-xl shadow-2xl mx-auto max-w-full h-auto border-4 border-white">
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/918573930817" target="_blank" class="float-btn whatsapp" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+918573930817" class="float-btn call" title="Call Us">
+            <i class="fas fa-phone-alt text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <img src="assets/IMG-20260320-WA0000.jpg" class="h-8 w-8 rounded-full mr-2" alt="">
+                        Anukul
+                    </h3>
+                    <p class="text-gray-400">Your dedicated space for learning and competitive exam preparation in Dildarnagar.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 border-b-2 border-green-500 pb-2 inline-block">Contact Info</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fas fa-phone mr-2 text-green-400"></i> 8573930817, 9170011018</li>
+                        <li><i class="fas fa-phone mr-2 text-green-400"></i> 8299581858</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-green-400"></i> Near By: Union Bank ke samne wali gali mein, Dildarnagar</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 border-b-2 border-green-500 pb-2 inline-block">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="facilities.html" class="hover:text-green-400 transition"><i class="fas fa-angle-right mr-1"></i> Library Facilities</a></li>
+                        <li><a href="academy.html" class="hover:text-green-400 transition"><i class="fas fa-angle-right mr-1"></i> Academy Courses</a></li>
+                        <li><a href="https://maps.app.goo.gl/uNWRmYmTW1KynXVy5" target="_blank" class="hover:text-green-400 transition"><i class="fas fa-angle-right mr-1"></i> Get Directions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Anukul Library & Academy. All Rights Reserved.</p>
+                <p class="mt-2">Managed by: Kuldeep Sir & Anurag Sir</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
